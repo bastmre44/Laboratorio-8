@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio — Next.js 14
 
-## Getting Started
+## Description
 
-First, run the development server:
+This project consists of the development of a modern personal portfolio website built with Next.js 14 and TailwindCSS.
+
+The portfolio was designed to showcase personal projects, laboratories, technologies, and professional interests through a responsive and visually modern interface. The application dynamically integrates GitHub repositories using the GitHub API, allowing projects to be displayed automatically.
+
+The project focuses on frontend development, responsive design, reusable components, and modern UI/UX practices.
+
+---
+
+## Objective
+
+To build a professional personal portfolio applying concepts such as:
+
+* Modern frontend development
+* Responsive web design
+* Component-based architecture
+* GitHub API integration
+* Dynamic content rendering
+* UI/UX design principles
+* Deployment using Vercel
+* SEO metadata configuration
+
+---
+
+## Technologies Used
+
+* Next.js 14
+* React 18
+* TailwindCSS 3
+* JavaScript
+* GitHub REST API
+* Vercel Deployment
+
+---
+
+## Features
+
+### Portfolio Sections
+
+* Hero Section
+* About Me Section
+* Dynamic Projects Section
+* Contact Section
+* Footer
+
+### Project System
+
+* Dynamic GitHub repository integration
+* Automatic repository rendering
+* Category separation:
+
+  * Course Projects
+  * Extra Projects
+  * Laboratories
+* Project previews with screenshots
+* Demo and repository links
+
+### UI Features
+
+* Dark modern interface
+* Responsive layout
+* Hover glow effects
+* Smooth scrolling navigation
+* Animated Hero Section
+* Custom scrollbar
+* Background gradients and noise effects
+
+---
+
+## Project Structure
+
+```bash
+portfolio/
+├── public/
+│   └── images/
+│       └── projects/
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   └── page.js
+│   ├── components/
+│   │   ├── layout/
+│   │   ├── sections/
+│   │   └── ui/
+│   └── lib/
+│       ├── data.js
+│       └── github.js
+├── next.config.js
+├── tailwind.config.js
+└── postcss.config.js
+```
+
+---
+
+## GitHub API Integration
+
+The portfolio dynamically consumes the GitHub API to retrieve repositories and display project information automatically.
+
+The project system supports:
+
+* Repository filtering
+* Dynamic categorization
+* Technology badges
+* Demo links
+* GitHub links
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Learning Outcomes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+During the development of this project, the following concepts were reinforced:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* Next.js App Router
+* Responsive design with TailwindCSS
+* Reusable component architecture
+* Dynamic rendering with APIs
+* UI polish and animations
+* Deployment workflows
+* GitHub project integration
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Mishell Jiménez**
+
+* GitHub: https://github.com/bastmre44
+* LinkedIn: https://www.linkedin.com/in/mishell-jiménez-835046339/
+
+---
+
