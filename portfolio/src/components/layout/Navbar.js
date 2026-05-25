@@ -1,17 +1,70 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
+import { navLinks } from "@/lib/data"
+
 export default function Navbar() {
+
+  const [scrolled, setScrolled] =
+    useState(false)
+
+  const [menuOpen, setMenuOpen] =
+    useState(false)
+
+  useEffect(() => {
+
+    function handleScroll() {
+
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    )
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      )
+    }
+
+  }, [])
+
+  function scrollToSection(id) {
+
+    const section =
+      document.getElementById(id)
+
+    if (!section) return
+
+    section.scrollIntoView({
+      behavior: "smooth",
+    })
+
+    setMenuOpen(false)
+  }
 
   return (
 
     <header
-      className="
+      className={`
         fixed top-0 left-0 w-full
-        border-b border-border
-        bg-[rgba(10,10,15,0.8)]
-        backdrop-blur-xl
-        z-50
-      "
+        z-50 transition-all duration-300
+
+        ${
+          scrolled
+            ? "bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-border"
+            : "bg-transparent"
+        }
+      `}
     >
 
       <nav
@@ -22,9 +75,15 @@ export default function Navbar() {
         "
       >
 
-        <h1
+        {/* LOGO */}
+
+        <button
+          onClick={() =>
+            scrollToSection("inicio")
+          }
           className="
             text-2xl font-bold text-white
+            font-heading
           "
         >
           &lt;
@@ -32,25 +91,136 @@ export default function Navbar() {
             Mishell
           </span>
           /&gt;
-        </h1>
+        </button>
 
-        <div className="flex gap-6">
+        {/* DESKTOP LINKS */}
 
-          <button className="text-muted hover:text-white">
-            Inicio
-          </button>
+        <div
+          className="
+            hidden md:flex
+            items-center gap-8
+          "
+        >
 
-          <button className="text-muted hover:text-white">
-            Proyectos
-          </button>
+          {navLinks.map((link) => (
 
-          <button className="text-muted hover:text-white">
-            Contacto
-          </button>
+            <button
+              key={link.href}
+
+              onClick={() =>
+                scrollToSection(link.href)
+              }
+
+              className="
+                text-muted hover:text-white
+                transition-colors duration-300
+              "
+            >
+              {link.label}
+            </button>
+
+          ))}
 
         </div>
 
+        {/* MOBILE BUTTON */}
+
+        <button
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
+
+          className="
+            md:hidden
+            flex flex-col gap-1.5
+          "
+        >
+
+          <span
+            className={`
+              w-6 h-0.5 bg-white
+              transition-all duration-300
+
+              ${
+                menuOpen
+                  ? "rotate-45 translate-y-2"
+                  : ""
+              }
+            `}
+          />
+
+          <span
+            className={`
+              w-6 h-0.5 bg-white
+              transition-all duration-300
+
+              ${
+                menuOpen
+                  ? "opacity-0"
+                  : ""
+              }
+            `}
+          />
+
+          <span
+            className={`
+              w-6 h-0.5 bg-white
+              transition-all duration-300
+
+              ${
+                menuOpen
+                  ? "-rotate-45 -translate-y-2"
+                  : ""
+              }
+            `}
+          />
+
+        </button>
+
       </nav>
+
+      {/* MOBILE MENU */}
+
+      <div
+        className={`
+          md:hidden overflow-hidden
+          transition-all duration-300
+
+          ${
+            menuOpen
+              ? "max-h-96 border-t border-border"
+              : "max-h-0"
+          }
+
+          bg-card
+        `}
+      >
+
+        <div className="p-6 flex flex-col gap-5">
+
+          {navLinks.map((link) => (
+
+            <button
+              key={link.href}
+
+              onClick={() =>
+                scrollToSection(link.href)
+              }
+
+              className="
+                text-left text-muted
+                hover:text-white
+                transition-colors duration-300
+              "
+            >
+              {link.label}
+            </button>
+
+          ))}
+
+        </div>
+
+      </div>
 
     </header>
   )

@@ -64,7 +64,7 @@ export const aboutMe = {
   ],
 
   learningGoals: [
-    "Docker",
+    
     "AWS",
     "Testing",
     "System Design",
