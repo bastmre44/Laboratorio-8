@@ -33,21 +33,45 @@ export default function HeroSection() {
 
     <section
       id="inicio"
+
       className="
-        min-h-screen
+        relative min-h-screen
         flex items-center
+        overflow-hidden
       "
     >
 
-      <div className="section-container">
+      {/* EXTRA GLOW */}
 
-        <div className="max-w-4xl">
+      <div
+        className="
+          absolute top-0 left-1/2
+          -translate-x-1/2
+
+          w-[700px]
+          h-[700px]
+
+          rounded-full
+
+          bg-[rgba(108,99,255,0.08)]
+
+          blur-[140px]
+
+          pointer-events-none
+        "
+      />
+
+      <div className="section-container relative z-10">
+
+        <div className="max-w-5xl">
 
           {/* TAG */}
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
             "
           >
@@ -62,22 +86,39 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
             "
           >
 
             <h1
               className="
-                section-title
-                mt-6
+                mt-8
+
+                text-6xl
+                md:text-8xl
+
+                font-heading
+                font-bold
+
+                leading-[0.95]
+                tracking-tight
+
+                text-white
               "
             >
 
               {personalInfo.firstName}
+
               <br />
 
-              <span className="text-accent">
+              <span
+                className="
+                  text-accent
+                "
+              >
                 {personalInfo.lastName}
               </span>
 
@@ -89,7 +130,9 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
             "
           >
@@ -97,8 +140,11 @@ export default function HeroSection() {
             <p
               className="
                 text-xl md:text-2xl
+
                 text-muted
-                mt-8
+
+                mt-10
+
                 max-w-3xl
               "
             >
@@ -111,15 +157,23 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
             "
           >
 
             <p
               className="
-                text-lg text-muted
-                mt-8 leading-relaxed
+                text-lg
+
+                text-muted
+
+                mt-8
+
+                leading-relaxed
+
                 max-w-2xl
               "
             >
@@ -132,25 +186,36 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
 
-              flex flex-wrap gap-4
-              mt-10
+              flex flex-wrap gap-5
+
+              mt-12
             "
           >
 
-            <button className="btn-primary">
+            <a
+              href="#proyectos"
 
-              Ver Proyectos
+              className="
+                btn-primary
+              "
+            >
+              Ver proyectos
+            </a>
 
-            </button>
+            <a
+              href="#contacto"
 
-            <button className="btn-outline">
-
+              className="
+                btn-outline
+              "
+            >
               Contactarme
-
-            </button>
+            </a>
 
           </div>
 
@@ -158,22 +223,32 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
 
               flex items-center gap-5
-              mt-10
+
+              mt-12
             "
           >
 
             {/* GITHUB */}
 
             <a
-              href={personalInfo.socialLinks.github}
+              href={
+                personalInfo.socialLinks.github
+              }
+
               target="_blank"
+
               className="
                 text-muted hover:text-white
-                transition-colors duration-300
+
+                transition-all duration-300
+
+                hover:scale-110
               "
             >
 
@@ -188,8 +263,6 @@ export default function HeroSection() {
                   d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.04 17.62 15.97 17.11 15.79 16.63C15.61 16.15 15.32 15.72 14.93 15.38C18.62 14.95 22.5 13.54 22.5 7.52C22.5 5.98 21.96 4.48 21 3.29C21.45 2.05 21.42 0.68 20.91 -0.54C20.91 -0.54 19.73 -0.89 16.99 0.91C14.71 0.29 12.29 0.29 10.01 0.91C7.27 -0.89 6.09 -0.54 6.09 -0.54C5.58 0.68 5.55 2.05 6 3.29C5.03 4.49 4.5 5.99 4.5 7.52C4.5 13.53 8.37 14.95 12.07 15.38C11.68 15.72 11.39 16.15 11.21 16.63C11.03 17.11 10.96 17.62 11 18.13V22"
                   stroke="currentColor"
                   strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
 
               </svg>
@@ -199,11 +272,18 @@ export default function HeroSection() {
             {/* LINKEDIN */}
 
             <a
-              href={personalInfo.socialLinks.linkedin}
+              href={
+                personalInfo.socialLinks.linkedin
+              }
+
               target="_blank"
+
               className="
                 text-muted hover:text-white
-                transition-colors duration-300
+
+                transition-all duration-300
+
+                hover:scale-110
               "
             >
 
@@ -247,11 +327,14 @@ export default function HeroSection() {
 
           <div
             className="
-              reveal opacity-0 translate-y-10
+              reveal opacity-0
+              translate-y-10
+
               transition-all duration-700
 
               flex flex-wrap gap-3
-              mt-14
+
+              mt-16
             "
           >
 
@@ -259,7 +342,13 @@ export default function HeroSection() {
 
               <span
                 key={tech}
-                className="tech-badge"
+
+                className="
+                  tech-badge
+
+                  hover:scale-105
+                  transition-transform
+                "
               >
                 {tech}
               </span>
@@ -269,6 +358,37 @@ export default function HeroSection() {
           </div>
 
         </div>
+
+      </div>
+
+      {/* SCROLL INDICATOR */}
+
+      <div
+        className="
+          absolute bottom-10 left-1/2
+          -translate-x-1/2
+
+          flex flex-col items-center
+          gap-3
+
+          text-muted
+
+          scroll-indicator
+        "
+      >
+
+        <span className="text-xs tracking-[0.3em] uppercase">
+          Scroll
+        </span>
+
+        <div
+          className="
+            w-px h-14
+            bg-gradient-to-b
+            from-accent
+            to-transparent
+          "
+        />
 
       </div>
 

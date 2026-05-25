@@ -7,15 +7,30 @@ export default function ProjectCard({
     <article
       className="
         card-base overflow-hidden
-        group
+        group relative
       "
     >
+
+      {/* GLOW */}
+
+      <div
+        className="
+          absolute inset-0
+          opacity-0
+          group-hover:opacity-100
+          transition-opacity duration-500
+
+          bg-[radial-gradient(circle_at_top,rgba(108,99,255,0.15),transparent_60%)]
+
+          pointer-events-none
+        "
+      />
 
       {/* IMAGE */}
 
       <div
         className="
-          h-52 overflow-hidden
+          relative h-56 overflow-hidden
           border-b border-border
           bg-surface
         "
@@ -32,7 +47,7 @@ export default function ProjectCard({
               w-full h-full object-cover
 
               transition-transform
-              duration-500
+              duration-700
 
               group-hover:scale-105
             "
@@ -60,15 +75,27 @@ export default function ProjectCard({
 
         )}
 
+        {/* OVERLAY */}
+
+        <div
+          className="
+            absolute inset-0
+
+            bg-gradient-to-t
+            from-[rgba(10,10,15,0.7)]
+            to-transparent
+          "
+        />
+
       </div>
 
       {/* CONTENT */}
 
-      <div className="p-6">
+      <div className="p-7 relative z-10">
 
-        {/* TYPE */}
+        {/* BADGE */}
 
-        <div className="mb-4">
+        <div className="mb-5">
 
           <span
             className="
@@ -76,15 +103,17 @@ export default function ProjectCard({
               text-xs font-medium
 
               bg-[rgba(108,99,255,0.12)]
-              border border-[rgba(108,99,255,0.2)]
+              border border-[rgba(108,99,255,0.25)]
 
               text-accent
             "
           >
 
-            {project.type === "project"
-              ? "Proyecto"
-              : "Laboratorio"}
+            {
+              project.type === "project"
+                ? "Proyecto"
+                : "Laboratorio"
+            }
 
           </span>
 
@@ -121,16 +150,18 @@ export default function ProjectCard({
           "
         >
 
-          {project.technologies?.map((tech) => (
+          {project.technologies?.map(
+            (tech) => (
 
-            <span
-              key={tech}
-              className="tech-badge"
-            >
-              {tech}
-            </span>
+              <span
+                key={tech}
+                className="tech-badge"
+              >
+                {tech}
+              </span>
 
-          ))}
+            )
+          )}
 
         </div>
 
@@ -164,17 +195,43 @@ export default function ProjectCard({
 
           </div>
 
-          {/* BUTTON */}
+          {/* BUTTONS */}
 
-          <a
-            href={project.githubUrl}
+          <div className="flex gap-3">
 
-            target="_blank"
+            {/* GITHUB */}
 
-            className="btn-outline"
-          >
-            GitHub
-          </a>
+            <a
+              href={project.githubUrl}
+
+              target="_blank"
+
+              className="btn-outline"
+            >
+              GitHub
+            </a>
+
+            {/* LIVE */}
+
+            {(project.live ||
+              project.homepage) && (
+
+              <a
+                href={
+                  project.live ||
+                  project.homepage
+                }
+
+                target="_blank"
+
+                className="btn-primary"
+              >
+                Demo
+              </a>
+
+            )}
+
+          </div>
 
         </div>
 
