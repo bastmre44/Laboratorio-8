@@ -79,7 +79,7 @@ export const featuredProjects = {
   // =========================
 
   "p1-blogg": {
-    image: "/images/projects/blog-project.png",
+    image: "/images/projects/P1.png",
 
     featured: true,
 
@@ -97,7 +97,7 @@ export const featuredProjects = {
   },
 
   "proyecto-2-sw": {
-    image: "/images/projects/proyecto2.png",
+    image: "/images/projects/bof.png",
 
     featured: true,
 
@@ -119,7 +119,7 @@ export const featuredProjects = {
   // =========================
 
   "proyecto-plataformas-mov": {
-    image: "/images/projects/mobile-project.png",
+    image: "/images/projects/plataformas.png",
 
     featured: true,
 
@@ -137,7 +137,7 @@ export const featuredProjects = {
   },
 
   "bof": {
-    image: "/images/projects/bof-project.png",
+    image: "/images/projects/bof.png",
 
     featured: true,
 
@@ -194,7 +194,7 @@ export const featuredProjects = {
   },
 
   "lab-rp-web": {
-    image: "/images/projects/lab-rp-web.png",
+    image: "/images/projects/mk.png",
 
     featured: false,
 
