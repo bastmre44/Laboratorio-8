@@ -24,22 +24,18 @@ export async function getRepositories() {
 
   const filteredRepositories = repositories
 
-    // eliminar forks
     .filter((repo) => !repo.fork)
 
-    // ocultar repos
     .filter(
       (repo) =>
         !hiddenRepositories.includes(repo.name)
     )
 
-    // solo mostrar los configurados
     .filter(
       (repo) =>
         featuredProjects[repo.name]
     )
 
-    // ordenar por actualización
     .sort(
       (a, b) =>
         new Date(b.updated_at) -
@@ -49,7 +45,7 @@ export async function getRepositories() {
   return filteredRepositories.map((repo) => {
 
     const customData =
-      featuredProjects[repo.name]
+      featuredProjects[repo.name] || {}
 
     return {
 
@@ -63,21 +59,29 @@ export async function getRepositories() {
 
       githubUrl: repo.html_url,
 
-      homepage: repo.homepage,
+      homepage:
+        repo.homepage || "",
 
-      language: repo.language,
+      language:
+        repo.language || "Code",
 
-      stars: repo.stargazers_count,
+      stars:
+        repo.stargazers_count || 0,
 
-      updatedAt: repo.updated_at,
+      updatedAt:
+        repo.updated_at,
 
-      image: customData.image,
+      image:
+        customData.image || "",
 
-      featured: customData.featured,
+      featured:
+        customData.featured || false,
 
-      type: customData.type,
+      type:
+        customData.type || "project",
 
-      live: customData.live,
+      live:
+        customData.live || "",
 
       technologies:
         customData.technologies || [],

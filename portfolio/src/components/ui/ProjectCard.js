@@ -131,8 +131,7 @@ export default function ProjectCard({ project }) {
           "
         >
 
-          {project.technologies.map((tech) => (
-
+        {project.technologies?.map((tech) => (
             <span
               key={tech}
               className="tech-badge"
