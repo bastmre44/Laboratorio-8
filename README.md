@@ -139,7 +139,7 @@ The project is deployed using Vercel.
 Production deployment:
 
 ```bash
-[https://laboratorio-8.vercel.app](https://portfolio-bastmrel-s-projects.vercel.app)
+https://portfolio-bastmrel-s-projects.vercel.app
 ```
 
 ---
