@@ -53,7 +53,7 @@ export const metadata = {
       "Portfolio profesional con proyectos frontend, full stack y aplicaciones web modernas.",
 
     url:
-      "https://tu-portfolio.vercel.app",
+      "https://laboratorio-8.vercel.app",
 
     siteName:
       "Mishell Portfolio",
