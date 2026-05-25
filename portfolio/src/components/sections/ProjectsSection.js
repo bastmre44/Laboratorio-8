@@ -7,14 +7,22 @@ export default async function ProjectsSection() {
   const repositories =
     await getRepositories()
 
-  const projects =
+  const courseProjects =
     repositories.filter(
-      (repo) => repo.type === "project"
+      (repo) =>
+        repo.category === "course"
+    )
+
+  const extraProjects =
+    repositories.filter(
+      (repo) =>
+        repo.category === "extra"
     )
 
   const labs =
     repositories.filter(
-      (repo) => repo.type === "lab"
+      (repo) =>
+        repo.category === "lab"
     )
 
   return (
@@ -41,27 +49,28 @@ export default async function ProjectsSection() {
 
       </div>
 
-      {/* MAIN PROJECTS */}
+      {/* COURSE PROJECTS */}
 
       <div className="mb-24">
 
-        <div className="flex items-center justify-between mb-10">
+        <div
+          className="
+            flex items-center gap-6
+            mb-10
+          "
+        >
 
           <h3
             className="
               text-3xl font-heading
               font-bold text-white
+              whitespace-nowrap
             "
           >
-            Proyectos principales
+            Proyectos del curso
           </h3>
 
-          <div
-            className="
-              h-px flex-1 ml-6
-              bg-border
-            "
-          />
+          <div className="h-px bg-border flex-1" />
 
         </div>
 
@@ -73,7 +82,53 @@ export default async function ProjectsSection() {
           "
         >
 
-          {projects.map((project) => (
+          {courseProjects.map((project) => (
+
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+
+          ))}
+
+        </div>
+
+      </div>
+
+      {/* EXTRA PROJECTS */}
+
+      <div className="mb-24">
+
+        <div
+          className="
+            flex items-center gap-6
+            mb-10
+          "
+        >
+
+          <h3
+            className="
+              text-3xl font-heading
+              font-bold text-white
+              whitespace-nowrap
+            "
+          >
+            Otros proyectos
+          </h3>
+
+          <div className="h-px bg-border flex-1" />
+
+        </div>
+
+        <div
+          className="
+            grid grid-cols-1
+            md:grid-cols-2
+            gap-8
+          "
+        >
+
+          {extraProjects.map((project) => (
 
             <ProjectCard
               key={project.id}
@@ -90,23 +145,24 @@ export default async function ProjectsSection() {
 
       <div>
 
-        <div className="flex items-center justify-between mb-10">
+        <div
+          className="
+            flex items-center gap-6
+            mb-10
+          "
+        >
 
           <h3
             className="
               text-3xl font-heading
               font-bold text-white
+              whitespace-nowrap
             "
           >
             Laboratorios
           </h3>
 
-          <div
-            className="
-              h-px flex-1 ml-6
-              bg-border
-            "
-          />
+          <div className="h-px bg-border flex-1" />
 
         </div>
 

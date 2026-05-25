@@ -8,7 +8,7 @@ export async function getRepositories() {
   const username = "bastmre44"
 
   const response = await fetch(
-    `https://api.github.com/users/${username}/repos`,
+    `https://api.github.com/users/${username}/repos?per_page=100`,
     {
       next: {
         revalidate: 3600,
@@ -24,18 +24,24 @@ export async function getRepositories() {
 
   const filteredRepositories = repositories
 
+    // eliminar forks
     .filter((repo) => !repo.fork)
 
+    // ocultar repos
     .filter(
       (repo) =>
         !hiddenRepositories.includes(repo.name)
     )
 
+    // solo mostrar repos configurados
     .filter(
       (repo) =>
-        featuredProjects[repo.name]
+        featuredProjects[
+          repo.name.toLowerCase()
+        ]
     )
 
+    // ordenar por fecha
     .sort(
       (a, b) =>
         new Date(b.updated_at) -
@@ -45,7 +51,9 @@ export async function getRepositories() {
   return filteredRepositories.map((repo) => {
 
     const customData =
-      featuredProjects[repo.name] || {}
+      featuredProjects[
+        repo.name.toLowerCase()
+      ] || {}
 
     return {
 
@@ -79,6 +87,9 @@ export async function getRepositories() {
 
       type:
         customData.type || "project",
+
+      category:
+        customData.category || "extra",
 
       live:
         customData.live || "",

@@ -74,10 +74,16 @@ export const aboutMe = {
 
 export const featuredProjects = {
 
-  "P1-BLOGg": {
+  // =========================
+  // PROYECTOS DEL CURSO
+  // =========================
+
+  "p1-blogg": {
     image: "/images/projects/blog-project.png",
 
     featured: true,
+
+    category: "course",
 
     type: "project",
 
@@ -90,10 +96,12 @@ export const featuredProjects = {
     ],
   },
 
-  "Proyecto-2-SW": {
+  "proyecto-2-sw": {
     image: "/images/projects/proyecto2.png",
 
     featured: true,
+
+    category: "course",
 
     type: "project",
 
@@ -101,15 +109,21 @@ export const featuredProjects = {
 
     technologies: [
       "React",
-      "JavaScript",
       "Node.js",
+      "JavaScript",
     ],
   },
 
-  "Proyecto-Plataformas-Mov": {
+  // =========================
+  // OTROS PROYECTOS
+  // =========================
+
+  "proyecto-plataformas-mov": {
     image: "/images/projects/mobile-project.png",
 
     featured: true,
+
+    category: "extra",
 
     type: "project",
 
@@ -122,25 +136,35 @@ export const featuredProjects = {
     ],
   },
 
-  "BOF": {
+  "bof": {
     image: "/images/projects/bof-project.png",
 
     featured: true,
+
+    category: "extra",
 
     type: "project",
 
     live: "",
 
     technologies: [
-      "JavaScript",
-      "React",
+      "Vue.js",
+      "Django",
+      "Docker",
+      "PostgreSQL",
     ],
   },
 
-  "Laboratorio-2": {
+  // =========================
+  // LABORATORIOS
+  // =========================
+
+  "laboratorio-2": {
     image: "/images/projects/lab2.png",
 
     featured: false,
+
+    category: "lab",
 
     type: "lab",
 
@@ -157,6 +181,8 @@ export const featuredProjects = {
 
     featured: false,
 
+    category: "lab",
+
     type: "lab",
 
     live: "",
@@ -167,10 +193,12 @@ export const featuredProjects = {
     ],
   },
 
-  "Lab-RP-WEB": {
+  "lab-rp-web": {
     image: "/images/projects/lab-rp-web.png",
 
     featured: false,
+
+    category: "lab",
 
     type: "lab",
 
@@ -182,7 +210,6 @@ export const featuredProjects = {
     ],
   },
 }
-
 export const hiddenRepositories = [
   "bastmre44",
 ]
