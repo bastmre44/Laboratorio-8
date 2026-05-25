@@ -11,7 +11,7 @@ export async function getRepositories() {
     `https://api.github.com/users/${username}/repos?per_page=100`,
     {
       next: {
-        revalidate: 3600,
+        revalidate: 10,
       },
     }
   )

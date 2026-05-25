@@ -97,7 +97,8 @@ export default function HeroSection() {
               className="
                 mt-8
 
-                text-6xl
+                text-5xl
+                sm:text-6xl
                 md:text-8xl
 
                 font-heading
@@ -166,7 +167,8 @@ export default function HeroSection() {
 
             <p
               className="
-                text-lg
+                text-base
+                md:text-lg
 
                 text-muted
 

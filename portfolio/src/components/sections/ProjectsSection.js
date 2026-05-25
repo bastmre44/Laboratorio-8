@@ -78,7 +78,7 @@ export default async function ProjectsSection() {
           className="
             grid grid-cols-1
             md:grid-cols-2
-            gap-8
+            gap-6 lg:gap-8
           "
         >
 

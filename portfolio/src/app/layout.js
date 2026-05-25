@@ -19,10 +19,49 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Mishell Portfolio",
+
+  title:
+    "Mishell Jiménez | Frontend Developer",
 
   description:
-    "Portfolio desarrollado con Next.js 14",
+    "Portfolio profesional desarrollado con Next.js 14 mostrando proyectos, laboratorios y experiencia en desarrollo web frontend y full stack.",
+
+  keywords: [
+    "Frontend Developer",
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Portfolio",
+    "Web Developer",
+    "TailwindCSS",
+  ],
+
+  authors: [
+    {
+      name: "Mishell Jiménez",
+    },
+  ],
+
+  creator: "Mishell Jiménez",
+
+  openGraph: {
+
+    title:
+      "Mishell Jiménez | Portfolio",
+
+    description:
+      "Portfolio profesional con proyectos frontend, full stack y aplicaciones web modernas.",
+
+    url:
+      "https://tu-portfolio.vercel.app",
+
+    siteName:
+      "Mishell Portfolio",
+
+    locale: "es_GT",
+
+    type: "website",
+  },
 }
 
 export default function RootLayout({
